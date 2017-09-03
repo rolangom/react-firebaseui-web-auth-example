@@ -46,7 +46,6 @@ stores.initStore = observable({
 
   init() {
     console.log('init store');
-    firebase.auth().useDeviceLanguage();
     firebase.auth().onAuthStateChanged(user => { user ? this.handleSignedInUser(user) : this.signOut(); });
     if (!this.isLogged) { fbui.start('.firebaseui-container', uiConfig); }
   },
